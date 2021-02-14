@@ -36,3 +36,16 @@ mvn clean package
 ```
 java -jar target/{fileName}.jar
 ```
+A anotação que define o ponto de partida do Spring é @SpringBootAplication:
+
+```java
+@SpringBootApplication
+public class SpringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringApplication.class, args);
+	}
+
+}
+```
+
