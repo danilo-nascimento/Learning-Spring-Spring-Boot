@@ -23,3 +23,16 @@
 ![Configuração inicial](imagens/exemplo-configuracao-inicial-001.png)
 
 Após gerar o arquivo compactado, descompacte no diretório de destino e importe o projeto na IDE.
+
+Para adicionar a index.html:
+- crie o arquivo em src/resources/static
+- No terminal, execute o comando para gerar o arquivo .jar:
+
+```
+mvn clean package
+```
+
+- Para executar o jar e iniciar o servidor, execute o comando:
+```
+java -jar target/{fileName}.jar
+```
