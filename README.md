@@ -95,6 +95,33 @@ O PostgreSQL precisa estar instalado e com o PATH configurado para usar scripts 
 
 [Solução para o Erro 'http://apt.postgresql.org/pub/repos/apt focal-pgdg InRelease' doesn't support architecture 'i386'](https://askubuntu.com/questions/1230969/skipping-acquire-of-configured-file-in-ubuntu-20-04-lts)
 
+#### Qual a configuração para acessar dados do banco?
+
+1. Crie uma classe responsável pela entidade
+1. Na classe, defina a tabela da entidade com as anotações:
+    . 
+    ```java
+    @Entity
+    @Table(name = <tableName>)
+    ``` 
+1. No body da classe use as anotações para definir as características da coluna:
+    
+    ```java
+    @Id // No caso de ser a chave primária
+    @Column(name = <columnName>)
+    @GenerateValue(strategy = GenerationType.<Option>) // Uma opção é AUTO. Precisa ver documentação das opções para 
+    private <dataType> <fieldName>;
+    ```
+1. Adicione os getters e setters à classe
+1. Crie uma interface que extenda CrudRepository:
+    
+    A classe CrudRepository recebe a classe da entidade criada anteriormente e o tipo de dado da chave primária:
+
+    ```java
+    public interface <interfaceName> extends CrudRepository< <entityClass> , <foreinerKey> > {
+
+    }
+    ```
 #### PostgreSQL
 
 Adicione a dependência que irá gerenciar o banco de dados no pom.xml
