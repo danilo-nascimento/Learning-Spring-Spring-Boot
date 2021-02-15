@@ -27,6 +27,7 @@ Um conjunto de códigos padrão que são utilizados sempre
 - [ ] org.springframework.stereotype.Repository ?
 - [ ] Anotações do Spring
 - [ ] application.properties
+- [ ] [@Autowired](https://blog.algaworks.com/injecao-de-dependencias-com-spring/)
 
 ## Porque usar Spring Boot
 
@@ -102,15 +103,15 @@ O PostgreSQL precisa estar instalado e com o PATH configurado para usar scripts 
     . 
     ```java
     @Entity
-    @Table(name = <tableName>)
+    @Table(name = {tableName})
     ``` 
 1. No body da classe use as anotações para definir as características da coluna:
     
     ```java
     @Id // No caso de ser a chave primária
-    @Column(name = <columnName>)
-    @GenerateValue(strategy = GenerationType.<Option>) // Uma opção é AUTO. Precisa ver documentação das opções para 
-    private <dataType> <fieldName>;
+    @Column(name = {columnName})
+    @GenerateValue(strategy = GenerationType.{Option}) // Uma opção é AUTO. Precisa ver documentação das opções para 
+    private {dataType} {fieldName};
     ```
 1. Adicione os getters e setters à classe
 1. Crie uma interface que extenda CrudRepository:
@@ -118,8 +119,23 @@ O PostgreSQL precisa estar instalado e com o PATH configurado para usar scripts 
     A classe CrudRepository recebe a classe da entidade criada anteriormente e o tipo de dado da chave primária:
 
     ```java
-    public interface <interfaceName> extends CrudRepository< <entityClass> , <foreinerKey> > {
+    public interface {interfaceName} extends CrudRepository< {entityClass} , {foreinerKey} > {
 
+    }
+    ```
+1. Adicione a classe principal (com a anotação SpringBootApplications) as anotações e classe controller:
+
+    ```java
+    @RestController
+    @RequestMapping({endpoint})
+    public class {entityName}Controller {
+        @AutoWired
+        private {entityRepository} {entityRepositoryField}
+
+        @GetMapping
+        public Iterable<{entityClass}> get{entityName} {
+            return this.{entityRepositoryField}.findAll();
+        }
     }
     ```
 #### PostgreSQL
