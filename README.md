@@ -23,6 +23,9 @@ Um conjunto de códigos padrão que são utilizados sempre
 - [ ] O que são Servlets
 - [ ] O que são JPA e Hibernates
 - [ ] [Spring Data](https://spring.io/projects/spring-data)
+- [ ] org.springframework.stereotype.Repository ?
+- [ ] Anotações do Spring
+- [ ] application.properties
 
 ## Porque usar Spring Boot
 
@@ -74,3 +77,19 @@ mvn clean package
 ```
 Ele funciona com banco de dados SQL ou NoSQL
 
+As classes, interfaces, etc que são referentes aos dados, devem ficar dentro do seus próprios pacotes data:
+
+```java
+package com.danilo.nascimento.learningspring.data.entity;
+package com.danilo.nascimento.learningspring.data.repository;
+```
+
+São utilizadas anotações para definir:
+- **Gerenciamento do banco de dados:**
+  - Entidades
+  - Colunas
+  - Chaves Primárias
+  - etc
+- **REST**
+  - Verbos
+  - Recursos (Endpoints)
