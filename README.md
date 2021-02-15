@@ -70,6 +70,8 @@ Para utilizar o banco de dados, adicione no arquivo application.properties:
 ```
 spring.jpa.hibernate.ddl-auto=none
 logging.level.org.springframework.jdbc.datasource.init.ScriptUtils=debug
+# Log do banco de dados
+logging.level.org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl=error
 ```
 Execute o comando para atualizar o banco de dados:
 ```
@@ -83,6 +85,36 @@ As classes, interfaces, etc que são referentes aos dados, devem ficar dentro do
 package com.danilo.nascimento.learningspring.data.entity;
 package com.danilo.nascimento.learningspring.data.repository;
 ```
+
+### Gerenciamento do banco de dados
+
+O PostgreSQL precisa estar instalado e com o PATH configurado para usar scripts bash
+
+[Instalar PostgreSQL no Ubuntu](https://www.postgresql.org/download/linux/ubuntu/)
+
+[Solução para o Erro 'http://apt.postgresql.org/pub/repos/apt focal-pgdg InRelease' doesn't support architecture 'i386'](https://askubuntu.com/questions/1230969/skipping-acquire-of-configured-file-in-ubuntu-20-04-lts)
+
+#### PostgreSQL
+
+Adicione a dependência que irá gerenciar o banco de dados no pom.xml
+
+```xml
+<dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+</dependency>
+```
+
+Adicione as propriedades no arquivo application.properties:
+```
+spring.jpa.database=postgresql
+spring.datasource.platform=postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/dev
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+```
+
+***
 
 São utilizadas anotações para definir:
 - **Gerenciamento do banco de dados:**
