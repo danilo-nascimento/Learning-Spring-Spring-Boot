@@ -11,8 +11,18 @@
 
 É um design pattern conhecido pela Sigla IoC é um Pattern que prega para usarmos o controle das instancias de uma determinada classe ser tratada externamente e não dentro da classe em questão, ou seja, Inverter o controle de uma classe delegando para uma outra classe, interface, componente, serviço, etc.
 
+## O que é um boilerplate
+
+Um conjunto de códigos padrão que são utilizados sempre
+
+
+## TODO
+
 - [ ] [Artigo com exemplo JS para melhor entendimento](https://blog.codecasts.com.br/dependency-injection-container-javascript-49e9eb2c399c)
 - [ ] [Artigo com exemplos](http://www.linhadecodigo.com.br/artigo/3418/inversao-de-controle-ioc-e-injecao-de-dependencia-di-diferencas.aspx)
+- [ ] O que são Servlets
+- [ ] O que são JPA e Hibernates
+- [ ] [Spring Data](https://spring.io/projects/spring-data)
 
 ## Porque usar Spring Boot
 
@@ -48,4 +58,19 @@ public class SpringApplication {
 
 }
 ```
+
+## Spring Data
+
+Os arquivos referentes ao banco de dados (data.sql e schema.sql) devem ficar em: src/main/resources
+
+Para utilizar o banco de dados, adicione no arquivo application.properties:
+```
+spring.jpa.hibernate.ddl-auto=none
+logging.level.org.springframework.jdbc.datasource.init.ScriptUtils=debug
+```
+Execute o comando para atualizar o banco de dados:
+```
+mvn clean package
+```
+Ele funciona com banco de dados SQL ou NoSQL
 
