@@ -6,6 +6,7 @@
 - JavaBeans: Objetos simples com getters e setters
 - Spring Beans: POJOs configurados no contexto da aplicação
 - DTO: Bean usado para state estado entre layers
+- Utiliza o Tomcat como servidor por padrão
 
 ## Inverse of Control (IoC)
 
