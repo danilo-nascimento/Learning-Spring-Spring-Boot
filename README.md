@@ -135,6 +135,7 @@ O PostgreSQL precisa estar instalado e com o PATH configurado para usar scripts 
 
     }
     ```
+    Ao criar métodos dentro da Interface, cuidado com os nomes. Por exmeplo: findReservationByResDate representa find (buscar) Reservation (Tipo do Objeto) By ResDate (Propriedade / Campo)
 1. Adicione a classe principal (com a anotação SpringBootApplications) as anotações e classe controller:
 
     ```java
@@ -238,4 +239,3 @@ Most engines provide a robust DSL or pattern for using raw documents, that are v
 ### Criando a View
 
 - Em resources/templates, crie o arquivo html com o nome da entidade ou lógica
-- 
