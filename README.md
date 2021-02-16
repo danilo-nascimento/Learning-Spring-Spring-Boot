@@ -112,6 +112,7 @@ O PostgreSQL precisa estar instalado e com o PATH configurado para usar scripts 
     @Column(name = {columnName})
     @GenerateValue(strategy = GenerationType.{Option}) // Uma opção é AUTO. Precisa ver documentação das opções para 
     private {dataType} {fieldName};
+    // Caso esteja pegando data do SQL, importe o pacote java.sql.date
     ```
 1. Adicione os getters e setters à classe
 1. Crie uma interface que extenda CrudRepository:
