@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class RoomReservation {
     private long roomId;
-    private long guesId;
+    private long guestId;
 
     private String roomName;
     private String roomNumber;
@@ -20,12 +20,12 @@ public class RoomReservation {
         this.roomId = roomId;
     }
 
-    public long getGuesId() {
-        return guesId;
+    public long getGuestId() {
+        return guestId;
     }
 
-    public void setGuesId(long guesId) {
-        this.guesId = guesId;
+    public void setGuestId(long guestId) {
+        this.guestId = guestId;
     }
 
     public String getRoomName() {

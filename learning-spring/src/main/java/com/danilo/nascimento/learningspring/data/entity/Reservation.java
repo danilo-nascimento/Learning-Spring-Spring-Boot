@@ -28,11 +28,11 @@ public class Reservation {
         this.reservationId = reservationId;
     }
 
-    public long getRoomid() {
+    public long getRoomId() {
         return roomid;
     }
 
-    public void setRoomid(long roomid) {
+    public void setRoomId(long roomid) {
         this.roomid = roomid;
     }
 
