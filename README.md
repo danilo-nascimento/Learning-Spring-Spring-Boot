@@ -35,6 +35,8 @@ Um conjunto de códigos padrão que são utilizados sempre
   - [ ] https://www.baeldung.com/spring-bean
   - [ ] https://medium.com/@decioluckow/explorando-bean-spring-ioc-e640c53d29a9
 - [ ] [Diferenças entre @Component, @Service e @Repository](https://receitasdecodigo.com.br/spring-framework/component-repository-service-em-spring)
+- [ ] Como tratar datas
+- [ ] org.springframework.ui.Model
 
 ## Porque usar Spring Boot
 
@@ -199,3 +201,41 @@ Utilize a anotação @AutoWired para deixar evidente qual o construtor padrão e
 Java or XML Config are other ways of getting the Spring IoC container configured with the new class.
 
 The Bean Factory or IoC container is the what gets configured for Spring applications.
+
+***
+
+## MVC
+
+![O que é MVC](imagens/mvc-001.png)
+
+![O que é Spring Controller](imagens/spring-controller-001.png)
+
+![Templates Engines](imagens/templates-engines-001.png)
+
+In Spring, the controller abstraction is the controller for the MVC pattern. It is indeed the heart of web application development in the Spring framework. It is nothing more than a Spring bean however. 
+
+You start with a POJO, and then decorate it in specific fashion to make it a controller. 
+
+Those decorations are in the form of annotations. Both class-level and method-level annotations, provide the needed behavior to be aspected in to allow for servlet mapping. 
+
+The methods, once annotated, respond to incoming web requests and perform work. When they have completed the job, they output either raw data or a view. Template engines also come into play with the MVC pattern in Spring. 
+
+Often, we are building webpages, and we need a clean way to support the merging of static content with dynamic data. 
+
+Spring supports several template engines out of the box. Now we have already added Thymeleaf, which is one of the most popular templating engines, to the mix on our application. 
+
+Most engines provide a robust DSL or pattern for using raw documents, that are viewable in supplying the dynamic placeholders that are needed to merge the model into the view. In my opinion, Thymeleaf does this the best. The placeholders for dynamic data don't actually show up in the HTML document. So you can style the page without data, giving you good separation of concerns. The template engine will then render the final visual merging the template or view, with the data or model. So let's go build a view for our application.
+
+### Criando o Controller
+
+- Crie um package web
+- Crie no package web a classe controller: {entityName}{repository}WebController. A finalidade dessa classe é tratar as requests referentes à entidade / lógica
+- Na classe adicione as anotações responsáveis pelos endpoints: @Controller, @ResquestMapping e os métodos ({Method}Mapping)
+- O método responsável pela request pode receber o parâmetro anotação @RequestParam
+- O package org.springframework.ui.Model pode ser passado por parâmetro também ao @{method}Mapping. Desta forma, esses métodos podem retornar o nome do template e os dados no Model.
+
+
+### Criando a View
+
+- Em resources/templates, crie o arquivo html com o nome da entidade ou lógica
+- 
