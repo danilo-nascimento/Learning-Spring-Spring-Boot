@@ -28,7 +28,13 @@ Um conjunto de códigos padrão que são utilizados sempre
 - [ ] Anotações do Spring
 - [ ] application.properties
 - [ ] [@Autowired](https://blog.algaworks.com/injecao-de-dependencias-com-spring/)
+  - [ ] https://www.youtube.com/watch?v=1BZ61FDm1tw
 - [ ] [Aspect Oriented Programming](https://docs.spring.io/spring-framework/docs/2.5.x/reference/aop.html)
+- [ ] A camada que trata os dados recebe os pacotes entity e respository como boa prática?
+- [ ] Spring Bean:
+  - [ ] https://www.baeldung.com/spring-bean
+  - [ ] https://medium.com/@decioluckow/explorando-bean-spring-ioc-e640c53d29a9
+- [ ] [Diferenças entre @Component, @Service e @Repository](https://receitasdecodigo.com.br/spring-framework/component-repository-service-em-spring)
 
 ## Porque usar Spring Boot
 
@@ -173,3 +179,23 @@ São utilizadas anotações para definir:
 - **REST**
   - Verbos
   - Recursos (Endpoints)
+
+***
+
+## Criando regras de negócio (Serviços)
+
+Separe sempre em packages
+
+Exemplos: 
+- com.{appName}.business.service (lógica das regras de negócio)
+- com.{appName}.business.domain (fields, getters e setters)
+
+Adicionar as dependências como *final* é uma boa prática
+
+Utilize a anotação @Service para componentes de Serviço e @Repository para os de persistência
+
+Utilize a anotação @AutoWired para deixar evidente qual o construtor padrão e determinar o Id da classe na aplicação toda. Um detalhe muito importante: o Spring só consegue injetar objetos que sejam Components dele.
+
+Java or XML Config are other ways of getting the Spring IoC container configured with the new class.
+
+The Bean Factory or IoC container is the what gets configured for Spring applications.
