@@ -67,6 +67,8 @@ public class SpringApplication {
 
 ## Spring Data
 
+Os bancos de dados incorporados não devem ser usados ​​para cargas de trabalho de produção, pois eles duram apenas enquanto o aplicativo.
+
 Os arquivos referentes ao banco de dados (data.sql e schema.sql) devem ficar em: src/main/resources
 
 Para utilizar o banco de dados, adicione no arquivo application.properties:
