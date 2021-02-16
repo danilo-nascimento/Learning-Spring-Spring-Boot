@@ -19,8 +19,8 @@ Um conjunto de códigos padrão que são utilizados sempre
 
 ## TODO
 
-- [ ] [Artigo com exemplo JS para melhor entendimento](https://blog.codecasts.com.br/dependency-injection-container-javascript-49e9eb2c399c)
-- [ ] [Artigo com exemplos](http://www.linhadecodigo.com.br/artigo/3418/inversao-de-controle-ioc-e-injecao-de-dependencia-di-diferencas.aspx)
+- [ ] [Artigo com exemplo JS para melhor entendimento do IoC](https://blog.codecasts.com.br/dependency-injection-container-javascript-49e9eb2c399c)
+- [ ] [Artigo com exemplos de IoC](http://www.linhadecodigo.com.br/artigo/3418/inversao-de-controle-ioc-e-injecao-de-dependencia-di-diferencas.aspx)
 - [ ] O que são Servlets
 - [ ] O que são JPA e Hibernates
 - [ ] [Spring Data](https://spring.io/projects/spring-data)
@@ -28,6 +28,7 @@ Um conjunto de códigos padrão que são utilizados sempre
 - [ ] Anotações do Spring
 - [ ] application.properties
 - [ ] [@Autowired](https://blog.algaworks.com/injecao-de-dependencias-com-spring/)
+- [ ] [Aspect Oriented Programming](https://docs.spring.io/spring-framework/docs/2.5.x/reference/aop.html)
 
 ## Porque usar Spring Boot
 
