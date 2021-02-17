@@ -37,6 +37,9 @@ Um conjunto de códigos padrão que são utilizados sempre
 - [ ] [Diferenças entre @Component, @Service e @Repository](https://receitasdecodigo.com.br/spring-framework/component-repository-service-em-spring)
 - [ ] Como tratar datas
 - [ ] org.springframework.ui.Model
+- [ ] Comparando Objetos
+  - [ ] https://www.tutorialspoint.com/java/java_using_comparator.htm
+  - [ ] https://blog.caelum.com.br/ordenando-colecoes-com-comparable-e-comparator/amp/
 
 ## Porque usar Spring Boot
 
