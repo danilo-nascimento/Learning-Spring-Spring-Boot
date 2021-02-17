@@ -171,6 +171,8 @@ spring.datasource.username=postgres
 spring.datasource.password=postgres
 ```
 
+Não esqueça de iniciar o serviço no Docker
+
 ***
 
 São utilizadas anotações para definir:
