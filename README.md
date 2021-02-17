@@ -40,6 +40,14 @@ Um conjunto de códigos padrão que são utilizados sempre
 - [ ] Comparando Objetos
   - [ ] https://www.tutorialspoint.com/java/java_using_comparator.htm
   - [ ] https://blog.caelum.com.br/ordenando-colecoes-com-comparable-e-comparator/amp/
+- [ ] Teste Unitários
+  - [ ] https://www.baeldung.com/mockito-series
+  - [ ] https://www.linkedin.com/learning/spring-test-driven-development-with-junit/welcome
+  - [ ] https://www.linkedin.com/learning/practical-test-driven-development-for-java-programmers/welcome
+- [ ] Ao importar métodos estáticos, cuidado para não esquecer de colocar static após import: 
+    ```java
+    import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+    ```
 
 ## Porque usar Spring Boot
 
