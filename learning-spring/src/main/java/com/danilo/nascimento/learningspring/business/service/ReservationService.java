@@ -12,10 +12,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-// Determina o componente como Serviço
 @Service
 public class ReservationService {
-    // Dependências
     private final RoomRepository roomRepository;
     private final GuestRepository guestRepository;
     private final ReservationRepository reservationRepository;
@@ -27,37 +25,29 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public List<RoomReservation> getRoomReservationForDate(Date date) {
+    public List<RoomReservation> getRoomReservationsForDate(Date date){
         Iterable<Room> rooms = this.roomRepository.findAll();
-
         Map<Long, RoomReservation> roomReservationMap = new HashMap();
         rooms.forEach(room -> {
             RoomReservation roomReservation = new RoomReservation();
-
             roomReservation.setRoomId(room.getRoomId());
             roomReservation.setRoomName(room.getRoomName());
             roomReservation.setRoomNumber(room.getRoomNumber());
-
             roomReservationMap.put(room.getRoomId(), roomReservation);
-
         });
-
-        Iterable<Reservation> reservations = this.reservationRepository.findReservationByReservationDate(new java.sql.Date(date.getTime()));
+        Iterable<Reservation> reservations = this.reservationRepository.findReservationByResDate(new java.sql.Date(date.getTime()));
         reservations.forEach(reservation -> {
-            RoomReservation roomReservation = roomReservationMap.get(reservation.getReservationId());
+            RoomReservation roomReservation = roomReservationMap.get(reservation.getRoomId());
             roomReservation.setDate(date);
             Guest guest = this.guestRepository.findById(reservation.getGuestId()).get();
             roomReservation.setFirstName(guest.getFirstName());
             roomReservation.setLastName(guest.getLastName());
-            roomReservation.setGuesId(guest.getGuestId());
-
+            roomReservation.setGuestId(guest.getGuestId());
         });
-
         List<RoomReservation> roomReservations = new ArrayList<>();
-        for(Long id: roomReservationMap.keySet()) {
+        for(Long id: roomReservationMap.keySet()){
             roomReservations.add(roomReservationMap.get(id));
         }
-
         return roomReservations;
     }
 }
