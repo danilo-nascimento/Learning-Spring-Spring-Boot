@@ -273,3 +273,9 @@ Most engines provide a robust DSL or pattern for using raw documents, that are v
 ### Desafio curso
 
 Criar uma nova View listando guests ordenados pelo sobrenome. O resultado deve conter: last name, first name, email, endereço e telefone.
+
+What does RestController add to each method annotated with a mapping annotation that Controller doesn't?
+The @ResponseBody annotation allows for JSON or XML Mapping of the Response Object.
+
+Which annotation is used to indicate the component that is at the heart of a MVC pattern?
+@Controller: Controllers are the heart of Spring MVC.
