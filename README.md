@@ -279,3 +279,14 @@ The @ResponseBody annotation allows for JSON or XML Mapping of the Response Obje
 
 Which annotation is used to indicate the component that is at the heart of a MVC pattern?
 @Controller: Controllers are the heart of Spring MVC.
+
+***
+
+### RestController
+
+![RestController](imagens/rest-controller-001.png)
+
+- Crie uma classe {entityName}WebServicesController
+- Adicione antes da declaração da classe as anotações @RestController e @RequestMapping
+- Injete as dependências
+- O retorno dos dados será em JSON
