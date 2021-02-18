@@ -44,6 +44,7 @@ Um conjunto de códigos padrão que são utilizados sempre
   - [ ] https://www.baeldung.com/mockito-series
   - [ ] https://www.linkedin.com/learning/spring-test-driven-development-with-junit/welcome
   - [ ] https://www.linkedin.com/learning/practical-test-driven-development-for-java-programmers/welcome
+- [ ] xmlns:th="http://thymeleaf.org"
 - [ ] Ao importar métodos estáticos, cuidado para não esquecer de colocar static após import: 
     ```java
     import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -243,12 +244,32 @@ Most engines provide a robust DSL or pattern for using raw documents, that are v
 ### Criando o Controller
 
 - Crie um package web
-- Crie no package web a classe controller: {entityName}{repository}WebController. A finalidade dessa classe é tratar as requests referentes à entidade / lógica
+- Crie no package web a classe controller: {entityName}WebController. A finalidade dessa classe é tratar as requests referentes à entidade / lógica
 - Na classe adicione as anotações responsáveis pelos endpoints: @Controller, @ResquestMapping e os métodos ({Method}Mapping)
 - O método responsável pela request pode receber o parâmetro anotação @RequestParam
 - O package org.springframework.ui.Model pode ser passado por parâmetro também ao @{method}Mapping. Desta forma, esses métodos podem retornar o nome do template e os dados no Model.
 
+### Criando o Service
 
-### Criando a View
+- Crie um package business.service.{entityName}{logic}
+- Crie a classe responsável pelo serviço
+- Injete as dependências
+- Crie os métodos responsáveis pelas requisições
+- Crie os métodos que executatam as regras de negócio
+
+### Criando a View utilizando o template Thymeleaf
 
 - Em resources/templates, crie o arquivo html com o nome da entidade ou lógica
+- Adicione à declaração html xmlns:th="http://thymeleaf.org"
+- Para percorrer dados multivalorados utilize:
+  ```html
+  <div th:each="name: ${listName}">
+    <p th:text="${name.prop}">Placeholder</p>
+  </div>
+  ```
+
+***
+
+### Desafio curso
+
+Criar uma nova View listando guests ordenados pelo sobrenome. O resultado deve conter: last name, first name, email, endereço e telefone.
